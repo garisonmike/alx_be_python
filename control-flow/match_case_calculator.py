@@ -1,21 +1,24 @@
-numb1 = int(input("enter the first number "))
-numb2 = int(input("enter the second number "))
-operation = input ("chooose the operation (+,-,*,/)""")
-if operation == "+":
-     sum= numb1 + numb2 
-     print (f"the result is {sum }")
+# Prompt for user input
+num1 = float(input("Enter the first number: "))
+num2 = float(input("Enter the second number: "))
+operation = input("Choose the operation (+, -, *, /): ")
 
-elif operation == "-":
-  diff = numb1- numb2
-  print (f"the result  is :{diff}")
-elif operation == "*":
-  product = numb1* numb2
-  print (f"the result is {product }")
-elif operation == "/":
-    if numb2 == 0:
-      print ("math error")
-    else :
-          div = numb1 / numb2
-          print(f"the result is {div}")
-else :
-   print ("invalid input operation ")
+# Perform calculation using Match Case
+match operation:
+    case "+":
+        result = num1 + num2
+        print(f"The result is {result}.")
+    case "-":
+        result = num1 - num2
+        print(f"The result is {result}.")
+    case "*":
+        result = num1 * num2
+        print(f"The result is {result}.")
+    case "/":
+        if num2 == 0:
+            print("Cannot divide by zero.")
+        else:
+            result = num1 / num2
+            print(f"The result is {result}.")
+    case _:
+        print("Invalid operation selected.")
